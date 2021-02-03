@@ -17,30 +17,29 @@
 package com.edmunds.rest.databricks.DTO.mlflow;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
-
 import java.util.List;
+import lombok.Data;
 
 @Data
 public class ModelVersionDTO {
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("version")
-    private String version;
-    @JsonProperty("creation_timestamp")
-    private Long creationTimestamp;
-    @JsonProperty("last_updated_timestamp")
-    private Long lastUpdatedTimestamp;
-    @JsonProperty("user_id")
-    private String userId;
-    @JsonProperty("current_stage")
-    private String currentStage;
-    @JsonProperty("source")
-    private String source;
-    @JsonProperty("run_id")
-    private String runId;
-    @JsonProperty("status")
-    private String status;
-    @JsonProperty("tags")
-    private List<ModelTagDTO> tags;
+  @JsonProperty("name")
+  private String name;
+  @JsonProperty("version")
+  private String version;
+  @JsonProperty("creation_timestamp")
+  private Long creationTimestamp;
+  @JsonProperty("last_updated_timestamp")
+  private Long lastUpdatedTimestamp;
+  @JsonProperty("user_id")
+  private String userId;
+  @JsonProperty("current_stage")
+  private String currentStage;
+  @JsonProperty("source")
+  private String source;
+  @JsonProperty("run_id")
+  private String runId;
+  @JsonProperty("status")
+  private String status;
+  @JsonProperty("tags")
+  private List<ModelTagDTO> tags;
 }

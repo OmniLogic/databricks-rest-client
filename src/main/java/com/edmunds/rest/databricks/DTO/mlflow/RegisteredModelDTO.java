@@ -17,20 +17,19 @@
 package com.edmunds.rest.databricks.DTO.mlflow;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
-
 import java.util.List;
+import lombok.Data;
 
 @Data
 public class RegisteredModelDTO {
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("creation_timestamp")
-    private Long creationTimestamp;
-    @JsonProperty("last_updated_timestamp")
-    private Long lastUpdatedTimestamp;
-    @JsonProperty("latest_versions")
-    private List<ModelVersionDTO> latestVersions;
-    @JsonProperty("tags")
-    private List<ModelTagDTO> tags;
+  @JsonProperty("name")
+  private String name;
+  @JsonProperty("creation_timestamp")
+  private Long creationTimestamp;
+  @JsonProperty("last_updated_timestamp")
+  private Long lastUpdatedTimestamp;
+  @JsonProperty("latest_versions")
+  private List<ModelVersionDTO> latestVersions;
+  @JsonProperty("tags")
+  private List<ModelTagDTO> tags;
 }

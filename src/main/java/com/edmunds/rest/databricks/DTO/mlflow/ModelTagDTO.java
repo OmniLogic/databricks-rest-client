@@ -25,10 +25,8 @@ import lombok.Data;
  */
 @Data
 public class ModelTagDTO implements Serializable {
-
-    @JsonProperty("key")
-    private String key;
-    @JsonProperty("value")
-    private String value;
-
+  @JsonProperty("key")
+  private String key;
+  @JsonProperty("value")
+  private String value;
 }

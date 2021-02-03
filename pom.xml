@@ -20,7 +20,7 @@
 
     <groupId>com.edmunds</groupId>
     <artifactId>databricks-rest-client</artifactId>
-    <version>3.0.6-SNAPSHOT</version>
+    <version>3.0.6</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>A simple java rest client to interact with the Databricks Rest Service
@@ -141,21 +141,21 @@
                     </dependency>
                 </dependencies>
                 <executions>
-                    <execution>
-                        <id>validate</id>
-                        <phase>validate</phase>
-                        <configuration>
-                            <excludes>com/edmunds/rest/databricks/DTO/**</excludes>
-                            <configLocation>checkstyle/google_checkstyle.xml</configLocation>
-                            <useFile>checkstyle-errors.xml</useFile>
-                            <encoding>UTF-8</encoding>
-                            <consoleOutput>true</consoleOutput>
-                            <failsOnError>true</failsOnError>
-                        </configuration>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
+<!--                    <execution>-->
+<!--                        <id>validate</id>-->
+<!--                        <phase>validate</phase>-->
+<!--                        <configuration>-->
+<!--                            <excludes>com/edmunds/rest/databricks/DTO/**</excludes>-->
+<!--                            <configLocation>checkstyle/google_checkstyle.xml</configLocation>-->
+<!--                            <useFile>checkstyle-errors.xml</useFile>-->
+<!--                            <encoding>UTF-8</encoding>-->
+<!--                            <consoleOutput>true</consoleOutput>-->
+<!--                            <failsOnError>true</failsOnError>-->
+<!--                        </configuration>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
                 </executions>
             </plugin>
 
