@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.Callable;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 
 public final class TestUtil {
   private TestUtil() {

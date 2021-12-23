@@ -28,7 +28,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 
 
 /**
@@ -37,7 +37,7 @@ import org.apache.log4j.Logger;
 public class RunJobs {
 
 
-  private static Logger log = Logger.getLogger(RunJobs.class);
+  private static Logger log = Logger.getLogger(RunJobs.class.getName());
 
   private RunJob[] runJobs;
   private long timeout;
@@ -86,7 +86,8 @@ public class RunJobs {
             log.info("Job[=" + currentJob.getJobId() + "] Still Running");
           }
         } catch (IOException | DatabricksRestException e) {
-          log.error("Job[=" + currentJob.getJobId() + "] failed", e);
+          log.severe("Job[=" + currentJob.getJobId() + "] failed");
+          e.printStackTrace();
 
           failedJobs.add(new AbstractMap.SimpleEntry(currentJob, e));
           runningJobsIterator.remove();
@@ -97,7 +98,8 @@ public class RunJobs {
           try {
             runningJob.cancelJob();
           } catch (IOException | DatabricksRestException e) {
-            log.error("Failed to cancel Job[=" + runningJob.getJobId() + "]", e);
+            log.severe("Failed to cancel Job[=" + runningJob.getJobId() + "]");
+            e.printStackTrace();
 
           } finally {
             failedJobs.add(new AbstractMap.SimpleEntry(runningJob,

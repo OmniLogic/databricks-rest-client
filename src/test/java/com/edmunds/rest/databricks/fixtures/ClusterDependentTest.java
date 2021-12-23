@@ -7,9 +7,9 @@ import com.edmunds.rest.databricks.DatabricksServiceFactory;
 import com.edmunds.rest.databricks.TestUtil;
 import com.edmunds.rest.databricks.service.ClusterService;
 import java.io.IOException;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
+
 import org.awaitility.Awaitility;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 

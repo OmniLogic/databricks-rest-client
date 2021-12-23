@@ -34,7 +34,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.client.StandardHttpRequestRetryHandler;
 import org.apache.http.message.BasicHeader;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 
 /**
  * A default http client builder implementation.
@@ -114,7 +114,7 @@ public class DefaultHttpClientBuilderFactory implements HttpClientBuilderFactory
           SSLConnectionSocketFactory.getDefaultHostnameVerifier());
       clientBuilder = clientBuilder.setSSLSocketFactory(sslsf);
     } catch (Exception e) {
-      logger.error("", e);
+      e.printStackTrace();
     }
     return clientBuilder;
   }

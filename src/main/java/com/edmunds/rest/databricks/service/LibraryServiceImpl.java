@@ -28,14 +28,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 
 /**
  * Implementation of LibraryService.
  */
 public final class LibraryServiceImpl extends DatabricksService implements LibraryService {
 
-  private static Logger log = Logger.getLogger(LibraryServiceImpl.class);
+  private static Logger log = Logger.getLogger(LibraryServiceImpl.class.getName());
 
   public LibraryServiceImpl(final DatabricksRestClient client) {
     super(client);
@@ -93,7 +93,8 @@ public final class LibraryServiceImpl extends DatabricksService implements Libra
       uninstall(clusterId,
           librariesToUninstall.toArray(new LibraryDTO[librariesToUninstall.size()]));
     } catch (DatabricksRestException e) {
-      log.error(e);
+      log.severe(e.getMessage());
+      e.printStackTrace();
       throw new DatabricksRestException("Error uninstalling libraries");
     }
   }

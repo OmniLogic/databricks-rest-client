@@ -21,18 +21,18 @@ import com.edmunds.rest.databricks.DatabricksRestException;
 import com.edmunds.rest.databricks.RequestMethod;
 import com.edmunds.rest.databricks.restclient.DatabricksRestClient;
 import com.fasterxml.jackson.core.type.TypeReference;
-import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * Implementation of MlflowService.
  */
 public class MlflowServiceImpl extends DatabricksService implements MlflowService {
 
-    private static Logger log = Logger.getLogger(MlflowServiceImpl.class);
+    private static Logger log = Logger.getLogger(MlflowServiceImpl.class.getName());
 
     public MlflowServiceImpl(final DatabricksRestClient client) {
         super(client);

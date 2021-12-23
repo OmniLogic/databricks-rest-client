@@ -24,11 +24,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
 
 /**
  * The main implementation of databricks rest client, which uses up to date httpclient.
@@ -94,7 +96,7 @@ public class DatabricksRestClientImpl extends AbstractDatabricksRestClientImpl {
           httpResponse.close();
         }
       } catch (IOException ioe) {
-        logger.debug("ignore close error", ioe);
+        logger.log(Level.CONFIG,"ignore close error", ioe);
       }
     }
   }

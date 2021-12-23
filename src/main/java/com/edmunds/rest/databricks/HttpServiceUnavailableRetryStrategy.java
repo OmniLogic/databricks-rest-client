@@ -21,7 +21,7 @@ import java.util.Set;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ServiceUnavailableRetryStrategy;
 import org.apache.http.protocol.HttpContext;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 
 /**
  * Retry Strategy when get HTTP response status code. ref> https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
@@ -64,7 +64,7 @@ public class HttpServiceUnavailableRetryStrategy implements ServiceUnavailableRe
     boolean isRetry = executionCount <= this.maxRetries && retryStatusSet
         .contains(response.getStatusLine().getStatusCode());
     if (isRetry) {
-      logger.warn(
+      logger.warning(
           "Retry HttpRequest " + executionCount + "th. statusCode=" + response.getStatusLine()
               .getStatusCode());
     }

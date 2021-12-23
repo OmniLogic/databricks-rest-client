@@ -41,14 +41,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 
 /**
  * A basic implementation of the ClusterService.
  */
 public final class ClusterServiceImpl extends DatabricksService implements ClusterService {
 
-  private static Logger log = Logger.getLogger(ClusterServiceImpl.class);
+  private static Logger log = Logger.getLogger(ClusterServiceImpl.class.getName());
 
   public ClusterServiceImpl(final DatabricksRestClient client) {
     super(client);
@@ -181,7 +181,7 @@ public final class ClusterServiceImpl extends DatabricksService implements Clust
     List<ClusterInfoDTO> clusters = findByName(clusterName);
 
     if (clusters.size() > 1) {
-      log.error(String.format("[%s] clusters found for name: [%s]. "
+      log.severe(String.format("[%s] clusters found for name: [%s]. "
           + "Please consider deleting or renaming duplicate clusters. "
           + "UPDATING FIRST CLUSTER ONLY", clusters.size(), clusterName));
     }

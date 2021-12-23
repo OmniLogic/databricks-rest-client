@@ -35,14 +35,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 
 /**
  * The implementation of JobService.
  */
 public class JobServiceImpl extends DatabricksService implements JobService {
 
-  private static Logger log = Logger.getLogger(JobServiceImpl.class);
+  private static Logger log = Logger.getLogger(JobServiceImpl.class.getName());
 
   public JobServiceImpl(final DatabricksRestClient client) {
     super(client);
@@ -108,8 +108,8 @@ public class JobServiceImpl extends DatabricksService implements JobService {
       if (failOnMultipleJobs) {
         throw new IllegalStateException(errorMessage);
       } else {
-        log.error(errorMessage);
-        log.error("returning the job with the lowest jobId");
+        log.severe(errorMessage);
+        log.severe("returning the job with the lowest jobId");
         long lowestJobId = Long.MAX_VALUE;
         JobDTO lowestJob = null;
         for (JobDTO job : jobs) {
@@ -267,7 +267,7 @@ public class JobServiceImpl extends DatabricksService implements JobService {
       if (failOnDuplicateJobNames) {
         throw new IllegalArgumentException(errorMessage);
       } else {
-        log.error(errorMessage + "UPDATING FIRST JOB ONLY");
+        log.severe(errorMessage + "UPDATING FIRST JOB ONLY");
       }
     }
     if (jobs.size() == 0) {
